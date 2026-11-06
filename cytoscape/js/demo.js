@@ -313,7 +313,7 @@ function update() {
 		params.customHttpHeaders.Authorization = auth.value.trim();
 	}
 	
-	['endpoint', 'id', 'prefixes', 'nodes', 'links', 'limit', 'optimize'].forEach(function(st) {
+	['endpoint', 'id', 'prefixes', 'nodes', 'links', 'limit', 'optimize', 'maxDepth'].forEach(function(st) {
 		params[st] = document.getElementById(st).value.trim();
 	});
 

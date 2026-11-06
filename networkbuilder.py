@@ -159,10 +159,11 @@ class NetworkBuilder:
 
         limit = int(opts.optimize*opts.limit)
         LOGGER.debug("Limit set to {}".format(limit))
+        maxDepth = opts.maxDepth if isinstance(opts.maxDepth, int) and opts.maxDepth > 0 else self.DEPTH_MAX
 
         t0 = time.time()
-        # no more than DEPTH_MAX steps:
-        for i in range(self.DEPTH_MAX):
+        # no more than maxDepth steps:
+        for i in range(maxDepth):
 
             node_list = ' '.join(["<{}>".format(n) for n in nodes])
             query = opts.links.replace('<ID>', node_list)

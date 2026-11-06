@@ -16,6 +16,7 @@ class QueryParams:
     removeMultipleLinks:bool    = True
     customHttpHeaders:Dict      = None
     adjust_layout:bool          = False
+    maxDepth:int                = 30
 
     def __post_init__(self):
         self.limit = int(self.limit)
